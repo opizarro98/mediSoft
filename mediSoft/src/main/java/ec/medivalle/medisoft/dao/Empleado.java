@@ -1,4 +1,4 @@
 package ec.medivalle.medisoft.dao;
 
-public class personaDAO {
+public class Empleado {
 }
