@@ -13,15 +13,17 @@ public class Persona {
     @Column(nullable = false)
     private String cedula;
     @Column(nullable = false)
-    private int nombre;
+    private String nombre;
     @Column(nullable = false)
-    private int telefono;
+    private String apellido;
     @Column(nullable = false)
-    private int celular;
+    private String telefono;
     @Column(nullable = false)
-    private int direccion;
+    private String celular;
     @Column(nullable = false)
-    private int correo;
+    private String direccion;
+    @Column(nullable = false)
+    private String correo;
     @Column(nullable = false)
     private int pais_nacimiento;
     @Column(nullable = false)
@@ -32,9 +34,11 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String cedula, int nombre, int telefono, int celular, int direccion, int correo, int pais_nacimiento, int provincia_nacimiento, int ciudad_nacimiento) {
+    public Persona(String tipo_persona, String cedula, String nombre, String apellido, String telefono, String celular, String direccion, String correo, int pais_nacimiento, int provincia_nacimiento, int ciudad_nacimiento) {
+        this.tipo_persona = tipo_persona;
         this.cedula = cedula;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.telefono = telefono;
         this.celular = celular;
         this.direccion = direccion;
@@ -42,6 +46,14 @@ public class Persona {
         this.pais_nacimiento = pais_nacimiento;
         this.provincia_nacimiento = provincia_nacimiento;
         this.ciudad_nacimiento = ciudad_nacimiento;
+    }
+
+    public String getTipo_persona() {
+        return tipo_persona;
+    }
+
+    public void setTipo_persona(String tipo_persona) {
+        this.tipo_persona = tipo_persona;
     }
 
     public String getCedula() {
@@ -52,43 +64,51 @@ public class Persona {
         this.cedula = cedula;
     }
 
-    public int getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public int getTelefono() {
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
     }
 
-    public int getDireccion() {
+    public String getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(int direccion) {
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-    public int getCorreo() {
+    public String getCorreo() {
         return correo;
     }
 
-    public void setCorreo(int correo) {
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
 

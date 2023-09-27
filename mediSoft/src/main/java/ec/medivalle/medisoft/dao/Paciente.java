@@ -22,8 +22,7 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(int id_persona, String tipo, String usuario, String contrasena, Persona persona) {
-        this.id_persona = id_persona;
+    public Paciente(String tipo, String usuario, String contrasena, Persona persona) {
         this.tipo = tipo;
         this.usuario = usuario;
         this.contrasena = contrasena;

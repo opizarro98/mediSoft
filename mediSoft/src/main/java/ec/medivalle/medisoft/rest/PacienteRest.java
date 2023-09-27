@@ -1,21 +1,27 @@
 package ec.medivalle.medisoft.rest;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-@RestController
-@RequestMapping("/ucuencaidAlumni")
-public class PacienteRest {
+import ec.medivalle.medisoft.dao.Paciente;
+import ec.medivalle.medisoft.service.PacienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-    /*@CrossOrigin(origins = Constantes.crossOrigin)
-    @RequestMapping(value = "/crearAlumni/{idAlumni}/identificacion/{identificacion}",
-            method = RequestMethod.POST)
+@RestController
+@RequestMapping("/paciente")
+public class PacienteRest {
+    @Autowired
+    private PacienteService pacienteService;
+    @CrossOrigin(origins = "http://localhost:8080")
+    @RequestMapping(value = "/crearPaciente",
+            method = RequestMethod.GET)
     @ResponseBody
-    public ApiResponse crearAlumniRest(
-            @PathVariable(value = "idAlumni") String idAlumni,
-            @PathVariable(value = "identificacion") String identificacion,
-            @RequestHeader(value = "santoysenia") String santoysenia
-    ){*/
+    public String crearAlumniRest(@RequestBody String nombre) {
+        try{
+            Paciente p = new Paciente();
+            pacienteService.nuevoPacinete(nombre);
+            return "Se creo correctamente el paciente";
+        }catch (Exception ex){
+            return "Error al crear el paciente";
+        }
 
 
     }
+}
