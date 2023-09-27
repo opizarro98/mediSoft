@@ -8,7 +8,7 @@ public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_persona;
+    private int id_paciente;
     @Column
     private String tipo;
     @Column
@@ -16,7 +16,7 @@ public class Paciente {
     @Column
     private String contrasena;
     @OneToOne
-    @JoinColumn(name = "id_persona_pacinete")
+    @JoinColumn(name = "id_persona_paciente")
     private Persona persona;
 
     public Paciente() {

@@ -1,4 +1,4 @@
 package ec.medivalle.medisoft.impl;
 
-public class MediCardImpl {
+public class EmpleadoServiceImpl {
 }

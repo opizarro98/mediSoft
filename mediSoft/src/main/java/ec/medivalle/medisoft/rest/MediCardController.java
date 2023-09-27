@@ -1,4 +1,4 @@
 package ec.medivalle.medisoft.rest;
 
-public class EmpleadoRest {
+public class MediCardController {
 }
